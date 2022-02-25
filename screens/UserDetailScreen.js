@@ -4,10 +4,10 @@ import {
     Button,
     View,
     Alert,
-    ActivityIndicator,
-    StyleSheet} from 'react-native';
+    ActivityIndicator} from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import firebase from '../database/firebase';
+import { StyleSheet } from 'react-native-web';
 
 const UserDetailScreen = (props) => {
     const initialState = {
@@ -58,8 +58,13 @@ const UserDetailScreen = (props) => {
         const userRef = firebase.db.collection("users").doc(user.id);
         await userRef.set({
             name:user.name,
+            lname:user.lname,
             email:user.email,
             phone:user.phone,
+            address:user.address,
+            age:user.age,
+            image:user.image,
+            gender:user.gender,
         });
         setUser(initialState);
         props.navigation.navigate("UsersList");
@@ -89,6 +94,13 @@ const UserDetailScreen = (props) => {
             </View>
             <View>
                 <TextInput
+                placeholder='Last name'
+                autoCompleteType='userlname'
+                value={user.lname}
+                onChangeText={(value) => handleChangeText(value, "lname")}/>
+            </View>
+            <View>
+                <TextInput
                 placeholder='Email'
                 autoCompleteType='email'
                 value={user.email}
@@ -100,6 +112,34 @@ const UserDetailScreen = (props) => {
                 autoCompleteType='phone'
                 value={user.phone}
                 onChangeText={(value) => handleChangeText(value, "phone")}/>
+            </View>
+            <View>
+                <TextInput
+                placeholder='Address'
+                autoCompleteType='address'
+                value={user.address}
+                onChangeText={(value) => handleChangeText(value, "address")}/>
+            </View>
+            <View>
+                <TextInput
+                placeholder='Age'
+                autoCompleteType='age'
+                value={user.age}
+                onChangeText={(value) => handleChangeText(value, "age")}/>
+            </View>
+            <View>
+                <TextInput
+                placeholder='Image'
+                autoCompleteType='image'
+                value={user.image}
+                onChangeText={(value) => handleChangeText(value, "image")}/>
+            </View>
+            <View>
+                <TextInput
+                placeholder='Gender'
+                autoCompleteType='gender'
+                value={user.gender}
+                onChangeText={(value) => handleChangeText(value, "gender")}/>
             </View>
             <View>
                 <Button
@@ -118,5 +158,15 @@ const UserDetailScreen = (props) => {
         </ScrollView>
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+}
+)
 
 export default UserDetailScreen

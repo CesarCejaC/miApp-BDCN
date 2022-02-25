@@ -2,6 +2,7 @@ import React, {useState,useEffect} from 'react';
 import { Button } from 'react-native';
 import {ListItem, Avatar} from "react-native-elements";
 import { ScrollView } from 'react-native';
+import { StyleSheet } from 'react-native-web';
 
 import firebase from '../database/firebase';
 
@@ -13,12 +14,18 @@ const UsersList = (props) => {
         firebase.db.collection("users").onSnapshot((QuerySnapshot)=>{
             const users = [];
             QuerySnapshot.docs.forEach((doc) => {
-                const {name,email,phone} = doc.data();
+                const {name,lname,email,phone,address,age,image,gender} = doc.data();
                 users.push({
                     id:doc.id,
                     name,
+                    lname,
                     email,
                     phone,
+                    address,
+                    age,
+                    image,
+                    gender,
+
                 });
             });
             setUsers(users);
@@ -55,5 +62,15 @@ const UsersList = (props) => {
         </ScrollView>    
     )
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+}
+)
 
 export default UsersList
