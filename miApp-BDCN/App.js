@@ -6,7 +6,6 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import UsersList from './screens/UsersList';
 import CreateUserScreen from './screens/CreateUserScreen';
 import UserDetailScreen from './screens/UserDetailScreen';
-import LoginScreen from './screens/LoginScreen';
 
 const Stack = createNativeStackNavigator()
 function MyStack() {
@@ -15,7 +14,6 @@ function MyStack() {
             <Stack.Screen name="UsersList" component={UsersList}/>
             <Stack.Screen name="CreateUserScreen" component={CreateUserScreen}/>
             <Stack.Screen name="UserDetailScreen" component={UserDetailScreen}/>
-            <Stack.Screen name="LoginScreen" component={LoginScreen}/>
         </Stack.Navigator>
     )
 }
@@ -31,10 +29,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+  
     },
 }
 );

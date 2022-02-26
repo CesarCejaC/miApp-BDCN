@@ -11,7 +11,7 @@ const CreateUserScreen = (props) => {
         lname:"",
         email:"",
         phone:"",
-        addres:"",
+        address:"",
         age:"",
         image:"",
         gender:"",
@@ -34,7 +34,7 @@ const CreateUserScreen = (props) => {
                         lname: state.name,
                         email: state.email,
                         phone: state.phone,
-                        address: state.addres,
+                        address: state.address,
                         age: state.age,
                         image: state.image,
                         gender: state.gender,
@@ -47,12 +47,15 @@ const CreateUserScreen = (props) => {
     };
 
     return (
-        <ScrollView>
+        <ScrollView
+        style={styles.container}
+        >
             <View>
                 <TextInput
                     placeholder="User Firstname"
                     onChangeText={(value) => handleChangeText(value, "name")}
                     value={state.name}
+                    style={styles.inputs}
                 />
             </View>
             <View>
@@ -60,6 +63,7 @@ const CreateUserScreen = (props) => {
                     placeholder="User Lastname"
                     onChangeText={(value) => handleChangeText(value, "lname")}
                     value={state.lname}
+                    style={styles.inputs}
                 />
             </View>
             <View>
@@ -67,6 +71,7 @@ const CreateUserScreen = (props) => {
                     placeholder="User Email"
                     onChangeText={(value) => handleChangeText(value, "email")}
                     value={state.email}
+                    style={styles.inputs}
                 />
             </View>
             <View>
@@ -74,6 +79,7 @@ const CreateUserScreen = (props) => {
                     placeholder="User Phone"
                     onChangeText={(value) => handleChangeText(value, "phone")}
                     value={state.phone}
+                    style={styles.inputs}
                 />
             </View>
             <View>
@@ -81,6 +87,7 @@ const CreateUserScreen = (props) => {
                     placeholder="User Address"
                     onChangeText={(value) => handleChangeText(value, "address")}
                     value={state.address}
+                    style={styles.inputs}
                 />
             </View>
             <View>
@@ -88,6 +95,7 @@ const CreateUserScreen = (props) => {
                     placeholder="User Age"
                     onChangeText={(value) => handleChangeText(value, "age")}
                     value={state.age}
+                    style={styles.inputs}
                 />
             </View>
             <View>
@@ -95,6 +103,7 @@ const CreateUserScreen = (props) => {
                     placeholder="User Image"
                     onChangeText={(value) => handleChangeText(value, "image")}
                     value={state.image}
+                    style={styles.inputs}
                 />
             </View>
             <View>
@@ -102,12 +111,15 @@ const CreateUserScreen = (props) => {
                     placeholder="User Gender"
                     onChangeText={(value) => handleChangeText(value, "gender")}
                     value={state.gender}
+                    style={styles.inputs}
                 />
             </View>
             <View>
                 <Button
                     title="Save User"
                     onPress={() => saveNewUser()}
+                    color='#25B30C'
+                    style={styles.button}
                 />
             </View>
         </ScrollView>
@@ -116,10 +128,11 @@ const CreateUserScreen = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: '#5073E6',
+    }, 
+    inputs:{
+        backgroundColor:'#FF9F33'
+
     },
 }
 )

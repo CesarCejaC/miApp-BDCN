@@ -49,12 +49,15 @@ const UsersList = (props) => {
                         userId: user.id,
                     })}
                     >
-                    <ListItem.Chevron/>
+                    <ListItem.Chevron
+                    
+                    />
                     <Avatar
                     source={{uri:"https://cosasdemascotas.net/wp-content/uploads/2020/06/ijgk7otlk58-scaled.jpg"}}
                     rounded
                     />
-                    <ListItem.Content>
+                    <ListItem.Content
+                    >
                         <ListItem.Title>{user.name}</ListItem.Title>
                         <ListItem.Subtitle>{user.email}</ListItem.Subtitle>
                     </ListItem.Content>
@@ -67,14 +70,8 @@ const UsersList = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#000000',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    inputText:{
-        backgroundColor:'#fff',
-    }
+        backgroundColor: '#5073E6',
+    }, 
 }
 )
 

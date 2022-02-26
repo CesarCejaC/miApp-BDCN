@@ -8,6 +8,7 @@ import {
 import { TextInput } from 'react-native-gesture-handler';
 import firebase from '../database/firebase';
 import { StyleSheet } from 'react-native-web';
+import { fonts } from 'react-native-elements/dist/config';
 
 const UserDetailScreen = (props) => {
     const initialState = {
@@ -87,13 +88,16 @@ const UserDetailScreen = (props) => {
     };
 
     return (
-        <ScrollView>
+        <ScrollView
+        style={styles.container}
+        >
             <View>
                 <TextInput
                 placeholder='Name'
                 autoCompleteType='username'
                 value={user.name}
                 onChangeText={(value) => handleChangeText(value, "name")}
+                style={styles.inputs}
                 />
             </View>
             <View>
@@ -101,53 +105,63 @@ const UserDetailScreen = (props) => {
                 placeholder='Last name'
                 autoCompleteType='userlname'
                 value={user.lname}
-                onChangeText={(value) => handleChangeText(value, "lname")}/>
+                onChangeText={(value) => handleChangeText(value, "lname")}
+                style={styles.inputs}
+                />
             </View>
             <View>
                 <TextInput
                 placeholder='Email'
                 autoCompleteType='email'
                 value={user.email}
-                onChangeText={(value) => handleChangeText(value, "email")}/>
+                onChangeText={(value) => handleChangeText(value, "email")}
+                style={styles.inputs}
+                />
             </View>
             <View>
                 <TextInput
-                numeric
-                keyboardType='numeric-pad'
                 placeholder='Phone'
                 autoCompleteType='phone'
                 value={user.phone}
-                onChangeText={(value) => handleChangeText(value, "phone")}/>
+                onChangeText={(value) => handleChangeText(value, "phone")}
+                style={styles.inputs}
+                />
             </View>
             <View>
                 <TextInput
                 placeholder='Address'
                 autoCompleteType='address'
                 value={user.address}
-                onChangeText={(value) => handleChangeText(value, "address")}/>
+                onChangeText={(value) => handleChangeText(value, "address")}
+                style={styles.inputs}
+                />
             </View>
             <View>
                 <TextInput
-                numeric
-                keyboardType='numeric-pad'
                 placeholder='Age'
                 autoCompleteType='age'
                 value={user.age}
-                onChangeText={(value) => handleChangeText(value, "age")}/>
+                onChangeText={(value) => handleChangeText(value, "age")}
+                style={styles.inputs}
+                />
             </View>
             <View>
                 <TextInput
                 placeholder='Image'
                 autoCompleteType='image'
                 value={user.image}
-                onChangeText={(value) => handleChangeText(value, "image")}/>
+                onChangeText={(value) => handleChangeText(value, "image")}
+                style={styles.inputs}
+                />
             </View>
             <View>
                 <TextInput
                 placeholder='Gender'
                 autoCompleteType='gender'
                 value={user.gender}
-                onChangeText={(value) => handleChangeText(value, "gender")}/>
+                onChangeText={(value) => handleChangeText(value, "gender")}
+                style={styles.inputs}
+                />
             </View>
             <View>
                 <Button
@@ -169,10 +183,11 @@ const UserDetailScreen = (props) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+        backgroundColor: '#5073E6',
+    }, 
+    inputs:{
+        backgroundColor:'#FF9F33'
+
     },
 }
 )
