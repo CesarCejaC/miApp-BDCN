@@ -174,7 +174,7 @@ const UserDetailScreen = (props) => {
                 <Button
                 title='Update'
                 onPress={() => updateUser()}
-                color="#00ffff"
+                color='#25B30C'
                 />
             </View>
         </ScrollView>

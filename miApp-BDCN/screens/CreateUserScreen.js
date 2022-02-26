@@ -119,7 +119,6 @@ const CreateUserScreen = (props) => {
                     title="Save User"
                     onPress={() => saveNewUser()}
                     color='#25B30C'
-                    style={styles.button}
                 />
             </View>
         </ScrollView>
