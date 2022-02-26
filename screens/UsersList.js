@@ -33,7 +33,9 @@ const UsersList = (props) => {
     }, []);
 
     return (
-        <ScrollView>
+        <ScrollView
+        style={styles.container}
+        >
             <Button
                 title='Create user'
                 onPress={() => props.navigation.navigate("CreateUserScreen")}
@@ -66,10 +68,13 @@ const UsersList = (props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: '#000000',
         alignItems: 'center',
         justifyContent: 'center',
     },
+    inputText:{
+        backgroundColor:'#fff',
+    }
 }
 )
 

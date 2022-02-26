@@ -13,8 +13,12 @@ const UserDetailScreen = (props) => {
     const initialState = {
         id:"",
         name:"",
+        lname:"",
         email:"",
         phone:"",
+        address:"",
+        age:"",
+        gender:"",
     };
     const [user,setUser] = useState(initialState);
     const [loading, setLoading] = useState(true);
@@ -108,6 +112,8 @@ const UserDetailScreen = (props) => {
             </View>
             <View>
                 <TextInput
+                numeric
+                keyboardType='numeric-pad'
                 placeholder='Phone'
                 autoCompleteType='phone'
                 value={user.phone}
@@ -122,6 +128,8 @@ const UserDetailScreen = (props) => {
             </View>
             <View>
                 <TextInput
+                numeric
+                keyboardType='numeric-pad'
                 placeholder='Age'
                 autoCompleteType='age'
                 value={user.age}
