@@ -106,14 +106,28 @@ const CreateUserScreen = (props) => {
                     style={styles.inputs}
                 />
             </View>
-            <View>
+            {/* <View>
                 <TextInput 
                     placeholder="User Gender"
-                    onChangeText={(value) => handleChangeText(value, "gender")}
+                    onChangeText={(value) => handleChangeText(value, {gender})}
                     value={state.gender}
                     style={styles.inputs}
                 />
+            </View> */}
+
+            <View
+            style={styles.inputs}
+            >
+                <div>
+                    <input type="radio" name="gender" id="rad1" value="Male"
+                    />Male
+                        {/* <label for="rad1">Male</label> */}
+                    <input type="radio" name="gender" id="rad2" value="Female"
+                    />Female
+                        {/* <label for="rad2">Female</label> */}
+                </div>
             </View>
+            
             <View>
                 <Button
                     title="Save User"
