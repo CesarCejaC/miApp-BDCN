@@ -14,12 +14,13 @@ const UsersList = (props) => {
         firebase.db.collection("users").onSnapshot((QuerySnapshot)=>{
             const users = [];
             QuerySnapshot.docs.forEach((doc) => {
-                const {name,lname,email,phone,address,age,image,gender} = doc.data();
+                const {name,lname,email,password,phone,address,age,image,gender} = doc.data();
                 users.push({
                     id:doc.id,
                     name,
                     lname,
                     email,
+                    password,
                     phone,
                     address,
                     age,

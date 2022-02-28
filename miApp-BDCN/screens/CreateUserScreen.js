@@ -10,6 +10,7 @@ const CreateUserScreen = (props) => {
         name:"",
         lname:"",
         email:"",
+        password:"",
         phone:"",
         address:"",
         age:"",
@@ -31,8 +32,9 @@ const CreateUserScreen = (props) => {
                 await firebase.db.collection("users").add(
                     {
                         name: state.name,
-                        lname: state.name,
+                        lname: state.lname,
                         email: state.email,
+                        password: state.password,
                         phone: state.phone,
                         address: state.address,
                         age: state.age,
@@ -71,6 +73,15 @@ const CreateUserScreen = (props) => {
                     placeholder="User Email"
                     onChangeText={(value) => handleChangeText(value, "email")}
                     value={state.email}
+                    style={styles.inputs}
+                />
+            </View>
+            <View>
+                <TextInput 
+                    placeholder="User Password"
+                    onChangeText={(value) => handleChangeText(value, "password")}
+                    value={state.password}
+                    secureTextEntry
                     style={styles.inputs}
                 />
             </View>
@@ -119,7 +130,7 @@ const CreateUserScreen = (props) => {
             style={styles.inputs}
             >
                 <div>
-                    <input type="radio" name="gender" id="rad1" value="Male"
+                    <input type="radio" name    ="gender" id="rad1" value="Male"
                     />Male
                         {/* <label for="rad1">Male</label> */}
                     <input type="radio" name="gender" id="rad2" value="Female"
