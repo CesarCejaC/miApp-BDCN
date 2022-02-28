@@ -130,8 +130,10 @@ const CreateUserScreen = (props) => {
             style={styles.inputs}
             >
                 <div>
-                    <input type="radio" name    ="gender" id="rad1" value="Male"
+                    <input type="radio" name="gender" id="rad1" value="Male"
+                    
                     />Male
+
                         {/* <label for="rad1">Male</label> */}
                     <input type="radio" name="gender" id="rad2" value="Female"
                     />Female
