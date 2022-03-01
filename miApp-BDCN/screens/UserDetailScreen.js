@@ -8,7 +8,7 @@ import {
 import { TextInput } from 'react-native-gesture-handler';
 import firebase from '../database/firebase';
 import { StyleSheet } from 'react-native-web';
-import { fonts } from 'react-native-elements/dist/config';
+
 
 const UserDetailScreen = (props) => {
     const initialState = {

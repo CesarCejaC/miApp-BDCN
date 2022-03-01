@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator()
 function MyStack() {
     return (
         <Stack.Navigator>
-            {/* <Stack.Screen name="LoginScreen" options={{headerShown:false}} component={LoginScreen}/> */}
+            <Stack.Screen name="LoginScreen" options={{headerShown:false}} component={LoginScreen}/>
             <Stack.Screen name="UsersList" options={{headerShown:false}} component={UsersList}/>
             <Stack.Screen name="CreateUserScreen" component={CreateUserScreen}/>
             <Stack.Screen name="UserDetailScreen" component={UserDetailScreen}/>            

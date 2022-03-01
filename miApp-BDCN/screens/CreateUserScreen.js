@@ -157,9 +157,24 @@ const styles = StyleSheet.create({
         backgroundColor: '#5073E6',
     }, 
     inputs:{
-        backgroundColor:'#FF9F33'
-
+        backgroundColor:'#fff',
+        width: '80%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingHorizontal: 15,
+        paddingVertical: 10,
+        borderRadius: 10,
+        marginTop: 40,
+        marginLeft: 50,
+        padding: 15,
+        borderRadius: 10,
+        borderColor: '#0782F9',
+        borderWidth: 2,
+        color: '#000000',
+        fontWeight: '700',
+        fontSize: 16,
     },
+
 }
 )
 
