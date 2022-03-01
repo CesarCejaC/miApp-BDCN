@@ -122,6 +122,7 @@ const CreateUserScreen = (props) => {
                     style={styles.inputs}
                 />
             </View> */}
+
       <Picker
         selectedValue={gender}
         onValueChange={(value, index) => setGender(value)}
@@ -132,7 +133,6 @@ const CreateUserScreen = (props) => {
         <Picker.Item label="Male" value="Male" />
         <Picker.Item label="Female" value="Female" />
       </Picker>
-      
       <Text style={styles.inputs}>Your gender: {gender}</Text>
 
       <View>
