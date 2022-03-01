@@ -11,39 +11,41 @@ const LoginScreen = () => {
     const navigation = useNavigation()
 
     useEffect(() => {
-        const unsubscribe = auth.onAuthStateChanged(user =>{
-        if(user){
-            navigation.navigate("UsersList")
-        }
-    })
-    
-    return unsubscribe
+        const unsubscribe = auth.onAuthStateChanged(user => {
+            if (user) {
+                navigation.navigate("UsersList")
+            }
+        })
 
-    },[])
+        return unsubscribe
+
+    }, [])
 
     const handleSignUp = () => {
-        auth.createUserWithEmailAndPassword(email,password).then(userCredentials =>{
+        auth.createUserWithEmailAndPassword(email, password).then(userCredentials => {
             const user = userCredentials.user;
-            console.log('Registered with: ',user.email);
+            console.log('Registered with: ', user.email);
         })
-        .catch(error => alert (error.message))
+            .catch(error => alert(error.message))
     }
 
-    const handleLogin = () =>{
+    const handleLogin = () => {
         auth
             .signInWithEmailAndPassword(email, password)
             .then(userCredentials => {
                 const user = userCredentials.user;
                 console.log('Logged in with: ', user.email);
             })
-            .catch(error => alert (error.message))
+            .catch(error => alert(error.message))
     }
-    
-    return(
-        <KeyboardAvoidingView 
-            style={styles.container} 
+
+    return (
+        <KeyboardAvoidingView
+            style={styles.container}
             behavior="padding">
-            <View 
+            <View
+            ><Text style={styles.login}>Login</Text></View>
+            <View
                 style={styles.inputcontainer}>
                 <TextInput
                     palceholder="Email"
@@ -59,20 +61,20 @@ const LoginScreen = () => {
                     secureTextEntry
                 />
             </View>
-            <View 
+            <View
                 style={styles.buttonContainer}>
-                <TouchableOpacity 
-                    onPress={handleLogin} 
+                <TouchableOpacity
+                    onPress={handleLogin}
                     style={styles.button}>
-                    <Text 
+                    <Text
                         style={styles.buttonText}>Login
                     </Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity 
-                    onPress={handleSignUp} 
+                <TouchableOpacity
+                    onPress={handleSignUp}
                     style={[styles.button, styles.buttonOutline]}>
-                    <Text 
+                    <Text
                         style={styles.buttonOutLineText}>Register
                     </Text>
                 </TouchableOpacity>
@@ -80,51 +82,58 @@ const LoginScreen = () => {
         </KeyboardAvoidingView>
     )
 }
-export default LoginScreen 
+export default LoginScreen
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-      },
-      inputContainer: {
+        backgroundColor: '#746AB0',
+    },
+    inputContainer: {
         width: '80%'
-      },
-      input: {
+    },
+    input: {
         backgroundColor: 'white',
         paddingHorizontal: 15,
         paddingVertical: 10,
         borderRadius: 10,
         marginTop: 5,
-      },
-      buttonContainer: {
+    },
+    buttonContainer: {
         width: '60%',
         justifyContent: 'center',
         alignItems: 'center',
         marginTop: 40,
-      },
-      button: {
+    },
+    button: {
         backgroundColor: '#0782F9',
         width: '100%',
         padding: 15,
         borderRadius: 10,
         alignItems: 'center',
-      },
-      buttonOutline: {
+    },
+    buttonOutline: {
         backgroundColor: 'white',
         marginTop: 5,
         borderColor: '#0782F9',
         borderWidth: 2,
-      },
-      buttonText: {
+    },
+    buttonText: {
         color: 'white',
         fontWeight: '700',
         fontSize: 16,
-      },
-      buttonOutlineText: {
+    },
+    buttonOutlineText: {
         color: '#0782F9',
         fontWeight: '700',
         fontSize: 16,
-      },
+    },login:
+    {
+        color:"#fff",
+        fontSize:30,
+        marginBottom: 10,
+
+    }
 })

@@ -134,6 +134,8 @@ const CreateUserScreen = (props) => {
         <Picker.Item label="Female" value="Female" />
       </Picker>
       <Text style={styles.inputs}>Your gender: {gender}</Text>
+      
+
 
       <View>
         <Button
