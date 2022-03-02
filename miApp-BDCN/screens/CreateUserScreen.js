@@ -1,5 +1,12 @@
 import React, { useState } from "react";
-import { View, Button, TextInput, ScrollView, StyleSheet, Text } from "react-native";
+import {
+  View,
+  Button,
+  TextInput,
+  ScrollView,
+  StyleSheet,
+  Text,
+} from "react-native";
 import firebase from "../database/firebase";
 import { Picker } from "@react-native-picker/picker";
 
@@ -45,7 +52,7 @@ const CreateUserScreen = (props) => {
     }
   };
 
-  const [gender, setGender] = useState('Unknown');
+  const [gender, setGender] = useState("Unknown");
 
   return (
     <ScrollView style={styles.container}>
@@ -84,6 +91,7 @@ const CreateUserScreen = (props) => {
       </View>
       <View>
         <TextInput
+          keyboardType="numeric"
           placeholder="User Phone"
           onChangeText={(value) => handleChangeText(value, "phone")}
           value={state.phone}
@@ -100,6 +108,7 @@ const CreateUserScreen = (props) => {
       </View>
       <View>
         <TextInput
+          keyboardType="numeric"
           placeholder="User Age"
           onChangeText={(value) => handleChangeText(value, "age")}
           value={state.age}
@@ -133,9 +142,10 @@ const CreateUserScreen = (props) => {
         <Picker.Item label="Male" value="Male" />
         <Picker.Item label="Female" value="Female" />
       </Picker>
-      <Text style={styles.inputs}>Your gender: {gender}</Text>
-      
-
+      <Text style={styles.inputs}
+        value={state.gender}
+        onChangeText={(value) => handleChangeText(value, {gender})}
+      >Your gender: {gender}</Text>
 
       <View>
         <Button

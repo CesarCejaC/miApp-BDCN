@@ -5,11 +5,10 @@ import {
   View,
   Alert,
   ActivityIndicator,
-  StyleSheet
+  StyleSheet,
 } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import firebase from "../database/firebase";
-
 
 const UserDetailScreen = (props) => {
   const initialState = {
@@ -130,6 +129,7 @@ const UserDetailScreen = (props) => {
       </View>
       <View>
         <TextInput
+          keyboardType="numeric"
           placeholder="Phone"
           autoCompleteType="phone"
           value={user.phone}
@@ -148,6 +148,7 @@ const UserDetailScreen = (props) => {
       </View>
       <View>
         <TextInput
+          keyboardTye="numeric"
           placeholder="Age"
           autoCompleteType="age"
           value={user.age}
