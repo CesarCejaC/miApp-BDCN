@@ -30,6 +30,9 @@ const CreateUserScreen = (props) => {
   };
 
   const saveNewUser = async () => {
+    if (state.image === ""){
+      state.image="https://cosasdemascotas.net/wp-content/uploads/2020/06/ijgk7otlk58-scaled.jpg"
+    }
     if (state.name === "") {
       alert("please provide a name");
     } else {
@@ -38,7 +41,6 @@ const CreateUserScreen = (props) => {
           name: state.name,
           lname: state.lname,
           email: state.email,
-          password: state.password,
           phone: state.phone,
           address: state.address,
           age: state.age,
@@ -82,15 +84,6 @@ const CreateUserScreen = (props) => {
       </View>
       <View>
         <TextInput
-          placeholder="User Password"
-          onChangeText={(value) => handleChangeText(value, "password")}
-          value={state.password}
-          secureTextEntry
-          style={styles.inputs}
-        />
-      </View>
-      <View>
-        <TextInput
           keyboardType="numeric"
           placeholder="User Phone"
           onChangeText={(value) => handleChangeText(value, "phone")}
@@ -100,6 +93,7 @@ const CreateUserScreen = (props) => {
       </View>
       <View>
         <TextInput
+        keyboardType="email-address"
           placeholder="User Address"
           onChangeText={(value) => handleChangeText(value, "address")}
           value={state.address}

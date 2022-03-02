@@ -67,7 +67,6 @@ const UserDetailScreen = (props) => {
       name: user.name,
       lname: user.lname,
       email: user.email,
-      password: user.password,
       phone: user.phone,
       address: user.address,
       age: user.age,
@@ -116,14 +115,6 @@ const UserDetailScreen = (props) => {
           autoCompleteType="email"
           value={user.email}
           onChangeText={(value) => handleChangeText(value, "email")}
-          style={styles.inputs}
-        />
-      </View>
-      <View>
-        <TextInput
-          placeholder="User Password"
-          onChangeText={(value) => handleChangeText(value, "password")}
-          value={user.password}
           style={styles.inputs}
         />
       </View>
